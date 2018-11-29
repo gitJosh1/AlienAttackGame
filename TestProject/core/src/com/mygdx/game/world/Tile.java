@@ -6,12 +6,15 @@ import java.util.HashMap;
 //TileType in tutorial video
 public enum Tile {
 	
-	GRASS(1, true, "Floor"),
-	DIRT(2, true, "Floor2"),
-	SKY(3, false, "Sky"),
-	LAVA(4, true, "Lava"),
-	CLOUD(5, true, "Cloud"),
-	STONE(6, true, "Stone");
+	Black(1, false, "Black"),
+	GreyBuildingTile(2, false, "GreyBuildingTile"),
+	GreyFloorTile1(3, true, "GreyFloorTile1"),
+	Window(4, false, "Window"),
+	LightGreyBuildingTile(5, false, "LightGreyBuildingTile"),
+	FireEscape(6, true, "FireEscape"),
+	Door (7, false, "Door"),
+	windowAnimation(8, false, "windowAnimation"),
+	AnimatedWindow(9, false, "AnimatedWindow");
 	
 	public static final int TILE_SIZE = 16;
 	

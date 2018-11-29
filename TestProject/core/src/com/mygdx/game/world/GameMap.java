@@ -1,6 +1,9 @@
 package com.mygdx.game.world;
 
+import java.awt.*;
 import java.util.ArrayList;
+
+import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.entities.Entity;
@@ -9,10 +12,13 @@ import com.mygdx.game.entities.Player;
 public abstract class GameMap {
 	
 	protected ArrayList<Entity> entities;
+	protected Camera cam;
+
 	
 		public GameMap() {
 			entities = new ArrayList<Entity>();
-			entities.add(new Player(40, 400, this));
+			Player p = new Player(40, 400, this);
+			entities.add(p);
 		}
 	//made so we can call the methods in alien game
 	//orthogonal camera since it is side on
@@ -21,12 +27,16 @@ public abstract class GameMap {
 			for(Entity entity: entities) {
 				entity.render(batch);
 			}
+			camera.position.x = entities.get(0).getx();
+			camera.position.y = entities.get(0).gety();
+			camera.update();
 		}
 		public void update (float delta) {
 			//need to apply gravity (used earths gravity in this case)
 			for(Entity entity: entities) {
 				entity.update(delta, -9.8f);
 			}
+
 		}
 		public abstract void dispose ();
 		

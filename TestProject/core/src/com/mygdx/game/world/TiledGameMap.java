@@ -14,7 +14,7 @@ public class TiledGameMap extends GameMap {
 	OrthogonalTiledMapRenderer tiledMapRenderer;
 	
 	public TiledGameMap() {
-		tiledMap = new TmxMapLoader().load("C:\\Users\\njbat\\OneDrive\\Documents\\TestProject\\core\\assets\\demoMap.tmx");
+		tiledMap = new TmxMapLoader().load("C:\\Users\\njbat\\OneDrive\\Documents\\TestProject\\core\\assets\\AlleyWay.tmx");
 		//this will be what renders the tiled map
 		tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
 	}
